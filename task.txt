@@ -1,0 +1,3 @@
+1. Dockerized 2 Tier app
+2. Dockerize it for prod env as well
+3. Automate with CICD
