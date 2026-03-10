@@ -1,0 +1,12 @@
+# Include base requirements
+-r requirements.txt
+
+# Linting & Formatting
+pylint
+black
+flake8
+
+# Testing
+pytest
+pytest-django
+faker

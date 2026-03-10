@@ -1,0 +1,398 @@
+/* ========= Page ========= */
+.page {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Big white circle */
+.page::before {
+  content: "";
+  position: fixed;
+  left: -15vw;
+  top: -15vh;
+  width: 40vw;
+  height: 40vw;
+  min-width: 400px;
+  min-height: 400px;
+  max-width: 600px;
+  max-height: 600px;
+  background: rgba(255, 247, 32, 0.08);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Floating orbs */
+.orbOne,
+.orbTwo {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+  z-index: 0;
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.orbOne {
+  width: 20vw;
+  height: 20vw;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 350px;
+  max-height: 350px;
+  top: 10%;
+  right: -5%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.orbTwo {
+  width: 25vw;
+  height: 25vw;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 450px;
+  max-height: 450px;
+  bottom: -5%;
+  right: -8%;
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+/* ========= Card ========= */
+.card {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+}
+
+/* ========= Left Side ========= */
+.left {
+  background: linear-gradient(135deg, #08a030, #06943c);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .left {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.brand {
+  text-align: center;
+}
+
+.brandTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  color: white;
+}
+
+.brandText {
+  font-size: 1.1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.symbolBox {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.symbolText {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  margin: 0;
+}
+
+/* ========= Right Side ========= */
+.right {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .right {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.back {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 0.3s ease;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back:hover {
+  color: #06b912;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ========= Form ========= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #06b912;
+  box-shadow: 0 0 0 3px rgba(16, 171, 185, 0.1);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.submit {
+  width: 100%;
+  background: linear-gradient(135deg, #089a36, #05882a);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 171, 185, 0.3);
+  margin-top: 0.5rem;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 171, 185, 0.4);
+}
+
+/* ========= Divider ========= */
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 1rem 0;
+}
+
+/* ========= Terms ========= */
+.terms {
+  text-align: center;
+}
+
+.termsText {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ========= Footer ========= */
+.footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: black;
+  margin: 0;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.link {
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: white;
+}
+
+.dot {
+  color: black;
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 640px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .brandTitle {
+    font-size: 2rem;
+  }
+
+  .brandText {
+    font-size: 1rem;
+  }
+
+  .symbolBox {
+    width: 120px;
+    height: 120px;
+    font-size: 4rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .footer {
+    padding: 1rem 1.5rem;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    display: none;
+  }
+}
