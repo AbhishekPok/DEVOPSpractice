@@ -7,8 +7,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
@@ -90,7 +88,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin: auto;
 }
 
 .card:hover {
