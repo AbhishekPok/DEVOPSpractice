@@ -1,0 +1,49 @@
+# ==== Python ====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+*.egg
+dist/
+build/
+env/
+venv/
+.venv/
+db.sqlite3
+
+# ==== Node.js ====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==== Build output ====
+Frontend/build/
+Frontend/dist/
+
+# ==== Environment ====
+.env
+.env.local
+.env.*.local
+
+# ==== Logs & Debug ====
+*.log
+*.sqlite3
+db_processes.txt
+ls_*.log
+ls_*.txt
+*_check.log
+migrate_categories.sql
+
+# ==== IDE ====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ==== OS ====
+.DS_Store
+Thumbs.db
