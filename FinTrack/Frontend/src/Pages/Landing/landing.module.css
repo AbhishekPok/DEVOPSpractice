@@ -717,15 +717,73 @@
 
 /* ========= Responsive ========= */
 @media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
   .heroTitle {
     font-size: 2.25rem;
+  }
+
+  .heroText {
+    font-size: 1rem;
   }
 
   .sectionTitle {
     font-size: 2rem;
   }
 
+  .sectionText {
+    font-size: 1rem;
+  }
+
   .ctaTitle {
     font-size: 2rem;
+  }
+
+  .ctaText {
+    font-size: 1rem;
+  }
+  
+  .stats {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.875rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .headerButtons {
+    gap: 0.5rem;
+  }
+
+  .signInBtn {
+    padding: 0.5rem;
+  }
+
+  .getStartedBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .primaryBtn, .secondaryBtn, .ctaBtn, .ctaBtnOutline {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
   }
 }

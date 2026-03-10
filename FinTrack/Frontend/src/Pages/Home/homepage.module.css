@@ -364,3 +364,21 @@
 .mainContent::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #4d7c0f, #365314);
 }
+
+@media (max-width: 480px) {
+  .menuToggle {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .menuToggleIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .menuToggleText {
+    font-size: 0.9rem;
+  }
+  .contentWrapper {
+    padding: 4rem 1rem 1rem 1rem;
+  }
+}

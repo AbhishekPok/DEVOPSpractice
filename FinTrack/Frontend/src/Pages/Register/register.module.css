@@ -366,25 +366,49 @@
   }
 
   .brandTitle {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .brandText {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .symbolBox {
-    width: 120px;
-    height: 120px;
-    font-size: 4rem;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    border-width: 2px;
+  }
+
+  .left {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .right {
+    padding: 1.5rem 1rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .nameRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .input {
+    padding: 0.5rem 0.875rem;
+  }
+
+  .submit {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
   }
 
   .footer {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 
   .links {
