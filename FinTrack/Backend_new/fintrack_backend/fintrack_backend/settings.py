@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+ALLOWED_HOSTS = ['100.53.155.181','*']
 
 
 # =============================================================================
@@ -74,9 +74,10 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = config(
     'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000,http://localhost:5173',
+    default='http://localhost:3000,http://localhost:5173,http://100.53.155.181:3000',
     cast=Csv()
 )
+CORS_ALLOWED_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 
