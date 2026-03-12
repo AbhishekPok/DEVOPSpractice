@@ -33,7 +33,7 @@ export default function Categories() {
     const fetchCategories = async () => {
         try {
             const data = await categoryService.getAll();
-            setCategories(data);
+            setCategories(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error("Failed to fetch categories", error);
         } finally {

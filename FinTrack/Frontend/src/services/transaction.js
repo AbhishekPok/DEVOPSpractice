@@ -4,6 +4,10 @@ const transactionService = {
     // CRUD Operations
     getAll: async (params) => {
         const response = await api.get('/transactions/', { params });
+        // Handle paginated responses from DRF
+        if (response.data && response.data.results) {
+            return response.data.results;
+        }
         return response.data;
     },
 

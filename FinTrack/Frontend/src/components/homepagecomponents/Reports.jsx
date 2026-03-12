@@ -24,7 +24,7 @@ export function Reports() {
     const fetchTransactions = async () => {
       try {
         const data = await transactionService.getAll();
-        setTransactions(data);
+        setTransactions(Array.isArray(data) ? data : []);
       } catch (error) {
         console.error("Failed to fetch transactions", error);
       } finally {

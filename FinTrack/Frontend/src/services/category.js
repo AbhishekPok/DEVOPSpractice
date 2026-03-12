@@ -4,6 +4,10 @@ const categoryService = {
     // Get all categories
     getAll: async () => {
         const response = await api.get('/categories/');
+        // Handle paginated responses from DRF
+        if (response.data && response.data.results) {
+            return response.data.results;
+        }
         return response.data;
     },
 

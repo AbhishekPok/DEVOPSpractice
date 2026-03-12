@@ -18,7 +18,7 @@ export function ClusteringInsights() {
           transactionService.getAll(),
           transactionService.getStats()
         ]);
-        setTransactions(allTransactions);
+        setTransactions(Array.isArray(allTransactions) ? allTransactions : []);
 
         // Process stats for cluster data
         const clusters = Object.entries(stats.category_breakdown?.expense || {}).map(([category, data], index) => ({

@@ -32,7 +32,7 @@ export default function BudgetPlanning() {
     const fetchBudgets = async () => {
         try {
             const data = await budgetService.getAll();
-            setBudgets(data);
+            setBudgets(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error("Failed to fetch budgets", error);
         } finally {
@@ -43,7 +43,8 @@ export default function BudgetPlanning() {
     const fetchCategories = async () => {
         try {
             const data = await categoryService.getAll();
-            setCategories(data.filter(cat => cat.type === 'expense')); // Only expense categories for budgets
+            const cats = Array.isArray(data) ? data : [];
+            setCategories(cats.filter(cat => cat.type === 'expense')); // Only expense categories for budgets
         } catch (error) {
             console.error("Failed to fetch categories", error);
         }
