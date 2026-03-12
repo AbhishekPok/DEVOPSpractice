@@ -14,7 +14,7 @@ COPY requirements/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install gunicorn psycopg2-binary
 
-COPY . .
+COPY ./fintrack_backend .
 RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
