@@ -29,7 +29,7 @@ services:
       - static_files:/app/staticfiles
     command: >
       sh -c "python manage.py collectstatic --noinput && python manage.py migrate &&
-      gunicorn fintrack_backend.wsgi:applicaton --bind 0.0.0.0:8000 --workers 3"
+      gunicorn fintrack_backend.wsgi:application --bind 0.0.0.0:8000 --workers 3"
   frontend:
     build:
       context: ./Frontend
