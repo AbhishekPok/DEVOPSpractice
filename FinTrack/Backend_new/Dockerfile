@@ -10,11 +10,11 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements/requirements.txt .
+COPY ./fintrack_backend/requirements/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install gunicorn psycopg2-binary
 
-COPY ./fintrack_backend .
+COPY ./fintrack_backend/ .
 RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 

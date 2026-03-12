@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: fintrack_db
+    env_file:
+      - ./Backend_new/fintrack_backend/.env
+    networks:
+      - fintrack_network
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/psotgresql/data
+  backend:
+    build:
+      context: ./Backend_new
+      dockerfile: Dockerfile
+    container_name: fintrack_backend
+    env_file:
+      - ./Backend_new/fintrack_backend/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - fintrack_network
+    volumes:
+      - static_files:/app/staticfiles
+    command: >
+      sh -c "python manage.py migrate &&
+      gunicorn fintrack_backend.wsgi:applicaton --bind 0.0.0.:8000 --worker 3"
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: fintrack_frontend
+    env_file:
+      - ./Frontend/.env
+    networks:
+      - fintrack_network
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+networks:
+  fintrack_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  static_file:
